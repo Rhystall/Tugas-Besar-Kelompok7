@@ -16,7 +16,23 @@ def penarikan(Bank, Cash):
     else:
         print("Transfer berhasil, Anda akan dikenakan biaya 5000.")
     return Bank, Cash
+# function pemasukan 
+def tambah_pemasukan(Cash, Bank):
+    MasukanUang = int(input("Masukkan jumlah pemasukan: "))
+    Deskripsi = input("Masukkan deskripsi pemasukan: ")
 
+    print("1) Cash")
+    print("2) Bank")
+    MasukanKemana = int(input("Mau dimasukkan kemana: "))
+
+    if MasukanKemana == 1:
+        Cash += MasukanUang
+    elif MasukanKemana == 2:
+        Bank += MasukanUang
+    else:
+        print("Salah memasukkan pilihan.")
+
+    return Cash, Bank
 
 MasukanUang = int(input("Masukkan jumlah uang: "))
 print("1) Cash")
@@ -38,13 +54,16 @@ while DecisionCounter == 0:
     print()
     print("===== 0) ga ngapa ngapain 2 jam =====")
     print("===== 1) transfer ===================")
-    print()
+    print("===== 2) Pemasukan ==================")
+    
     Ngapain = input("")
     if Ngapain == "0":
         print("heeee, ok")
         sys.exit()
     elif Ngapain == "1":
         Bank, Cash = penarikan(Bank, Cash)
+    elif Ngapain == "2"
+        Cash, Bank = tambah_pemasukan (Cash, Bank)
     
     print()
     print("1) lanjut")
