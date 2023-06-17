@@ -32,3 +32,6 @@ while DecisionCounter == 0:
             Decision = MasukanLagi
             if Decision == 2 :
                 DecisionCounter =+ 1
+
+
+def tranfer()
