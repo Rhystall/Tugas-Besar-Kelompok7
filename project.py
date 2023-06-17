@@ -2,6 +2,26 @@ import sys
 Cash = 0
 Bank = 0
 cuy = (1, 2)
+data_keuangan = []
+
+#Function Catatan Keuangan (Aufa)
+def catatan_keuangan(tanggal, deskripsi, jenis, jumlah):
+    data = {
+        'Tanggal': tanggal,
+        'Deskripsi': deskripsi,
+        'Jenis': jenis,
+        'Jumlah': jumlah
+    }
+    data_keuangan.append(data)
+
+def lihat_catatan_keuangan():
+    print("=== Catatan Keuangan ===")
+    for data in data_keuangan:
+        print("Tanggal:", data['Tanggal'])
+        print("Deskripsi:", data['Deskripsi'])
+        print("Jenis:", data['Jenis'])
+        print("Jumlah:", data['Jumlah'])
+        print("=======================")
 
 #Function Penarikan (Aubrey)
 def penarikan(Bank, Cash):
@@ -36,7 +56,6 @@ def tambah_pemasukan(Cash, Bank):
 
 #Function Pengeluaran (Nadia)
 
-#Function Catatan Keuangan (Aufa)
 
 #Function Main (Aubrey)
 DecisionCounter = 0
@@ -62,6 +81,8 @@ while DecisionCounter == 0:
         Bank, Cash = penarikan(Bank, Cash)
     elif Ngapain == "2":
         Cash, Bank = tambah_pemasukan (Cash, Bank)
+    elif Ngapain == "5":
+        lihat_catatan_keuangan()
     
     print()
     print("1) lanjut")
