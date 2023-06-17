@@ -37,3 +37,4 @@ while DecisionCounter == 0:
 def tranfer()
 
 def history()
+def pengeluaran()
