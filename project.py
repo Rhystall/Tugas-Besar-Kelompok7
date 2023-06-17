@@ -35,6 +35,6 @@ while DecisionCounter == 0:
 
 #OTW
 def tranfer()
-
+def pemasukan()
 def history()
 def pengeluaran()
