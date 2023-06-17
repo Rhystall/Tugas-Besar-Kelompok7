@@ -22,7 +22,23 @@ def transfer(Bank):
             else:
                 print("Transfer berhasil, Anda akan dikenakan biaya 5000.")
             return Bank
+            
+# function pemasukan
+def pemasukan (Cash,Bank):
+    JumlahPemasukan = int(input("masukan pemasukan : ")
+    Deskripsi = input("keterangan : ")
+    print ("1. Cash")
+    print ("2. Bank")
 
+    MasukinKemana = int(input("Mau dimasukin kemana : ")
+
+    if MasukinKemana == 1:
+        Cash += JumlahPemasukan
+    elif MasukinKemana == 2:
+        Bank += JumlahPemasukan
+    else : 
+        print("pilihan tidak ada")
+    return Cash, Bank
 
 MasukanUang = int(input("Masukkan jumlah uang: "))
 print("1) Cash")
