@@ -1,44 +1,22 @@
 import sys
-
 Cash = 0
 Bank = 0
 rekening = [123, 412]
 cuy = (1, 2)
 
 
-def transfer(Bank):
-    Transfer = int(input("Berapa yang mau di transferkan: "))
-    Tujuan = int(input("Masukkan rekening yang mau di transfer: "))
+def penarikan(Bank, Cash):
+    Penarikan = int(input("Berapa yang mau di ambil: "))
+    Tanggal = input("Masukan tanggal : ")
+    Bank -= Penarikan + 5000
+    Cash += Penarikan
+    if Bank < 0:
+        print("Transfer gagal, dana kurang.")
+        Bank += Penarikan + 5000
+    else:
+        print("Transfer berhasil, Anda akan dikenakan biaya 5000.")
+    return Bank, Cash
 
-    while True:
-        if Tujuan not in rekening:
-            ulang = int(input("Rekening tidak ditemukan, coba lagi: "))
-            Tujuan = ulang
-        else:
-            Bank -= Transfer + 5000
-            if Bank < 0:
-                print("Transfer gagal, dana kurang.")
-                Bank += Transfer + 5000
-            else:
-                print("Transfer berhasil, Anda akan dikenakan biaya 5000.")
-            return Bank
-            
-# function pemasukan
-def pemasukan (Cash,Bank):
-    JumlahPemasukan = int(input("masukan pemasukan : ")
-    Deskripsi = input("keterangan : ")
-    print ("1. Cash")
-    print ("2. Bank")
-
-    MasukinKemana = int(input("Mau dimasukin kemana : ")
-
-    if MasukinKemana == 1:
-        Cash += JumlahPemasukan
-    elif MasukinKemana == 2:
-        Bank += JumlahPemasukan
-    else : 
-        print("pilihan tidak ada")
-    return Cash, Bank
 
 MasukanUang = int(input("Masukkan jumlah uang: "))
 print("1) Cash")
@@ -66,7 +44,7 @@ while DecisionCounter == 0:
         print("heeee, ok")
         sys.exit()
     elif Ngapain == "1":
-        Bank = transfer(Bank)
+        Bank, Cash = penarikan(Bank, Cash)
     
     print()
     print("1) lanjut")
