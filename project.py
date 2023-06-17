@@ -1,28 +1,28 @@
 import sys
 Cash = 0
 Bank = 0
-rekening = [123, 412]
 cuy = (1, 2)
 
-
+#Function Penarikan (Aubrey)
 def penarikan(Bank, Cash):
     Penarikan = int(input("Berapa yang mau di ambil: "))
     Tanggal = input("Masukan tanggal : ")
     Bank -= Penarikan + 5000
-    Cash += Penarikan
     if Bank < 0:
         print("Transfer gagal, dana kurang.")
         Bank += Penarikan + 5000
     else:
         print("Transfer berhasil, Anda akan dikenakan biaya 5000.")
+    Cash += Penarikan
     return Bank, Cash
-# function pemasukan 
+
+#Function Pemasukan (Edgar)
 def tambah_pemasukan(Cash, Bank):
     MasukanUang = int(input("Masukkan jumlah pemasukan: "))
     Deskripsi = input("Masukkan deskripsi pemasukan: ")
 
-    print("1) Cash")
-    print("2) Bank")
+    print("1. Cash")
+    print("2. Bank")
     MasukanKemana = int(input("Mau dimasukkan kemana: "))
 
     if MasukanKemana == 1:
@@ -32,37 +32,35 @@ def tambah_pemasukan(Cash, Bank):
     else:
         print("Salah memasukkan pilihan.")
 
-    return Cash, Bank
+    return Cash, Bank
 
-MasukanUang = int(input("Masukkan jumlah uang: "))
-print("1) Cash")
-print("2) Bank")
-MasukanKemana = int(input("Mau dimasukkan kemana: "))
+#Function Pengeluaran (Nadia)
 
-if MasukanKemana == 1:
-    Cash += MasukanUang
-elif MasukanKemana == 2:
-    Bank += MasukanUang
-else:
-    print("Salah")
+#Function Catatan Keuangan (Aufa)
 
+#Function Main (Aubrey)
 DecisionCounter = 0
 
 while DecisionCounter == 0:
     print("Jumlah uang cashmu adalah:", Cash)
     print("Jumlah uang di bankmu adalah:", Bank)
     print()
-    print("===== 0) ga ngapa ngapain 2 jam =====")
-    print("===== 1) transfer ===================")
-    print("===== 2) Pemasukan ==================")
+    print("========Cash Track=========")
+    print("===========Menu============")
+    print("0. ga ngapa ngapain 2 jam")
+    print("1. Transfer Uang")
+    print("2. Catat Pemasukan")
+    print("3. Catat Pengeluaran")
+    print("5. Lihat Catatan Keuangan")
+    print("6. Keluar")
     
-    Ngapain = input("")
+    Ngapain = input("Masukkan Pilihan: ")
     if Ngapain == "0":
         print("heeee, ok")
         sys.exit()
     elif Ngapain == "1":
         Bank, Cash = penarikan(Bank, Cash)
-    elif Ngapain == "2"
+    elif Ngapain == "2":
         Cash, Bank = tambah_pemasukan (Cash, Bank)
     
     print()
@@ -79,8 +77,4 @@ while DecisionCounter == 0:
             Decision = MasukanLagi
             if Decision == 2:
                 DecisionCounter += 1
-#OTW
 
-# def pemasukan():
-# def history():
-# def pengeluaran():
