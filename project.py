@@ -35,3 +35,5 @@ while DecisionCounter == 0:
 
 #OTW
 def tranfer()
+
+def history()
