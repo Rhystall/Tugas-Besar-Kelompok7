@@ -224,6 +224,8 @@ while DecisionCounter == 0:
     elif Ngapain == "3":
         HackedCounter +=1
         MenuPengeluaran()
+    elif Ngapain == "4":
+        lihat_catatan_keuangan()
     
     print()
     print("1) lanjut")
