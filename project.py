@@ -1,4 +1,6 @@
 import sys
+import datetime
+
 Cash = 0
 Bank = 0
 cuy = (1, 2)
@@ -99,3 +101,85 @@ while DecisionCounter == 0:
             if Decision == 2:
                 DecisionCounter += 1
 
+# ========= Pengeluaran =========
+# Inisialisasi array untuk menyimpan daftar pengeluaran
+pengeluaran = []
+
+# Fungsi untuk menambahkan pengeluaran baru
+def tambah_pengeluaran():
+    nama = input("Masukkan nama pengeluaran: ")
+    jumlah = float(input("Masukkan jumlah pengeluaran: "))
+    tanggal = input("Masukkan tanggal pengeluaran (YYYY-MM-DD): ")
+    try:
+        tanggal = datetime.datetime.strptime(tanggal, "%Y-%m-%d").date()
+        pengeluaran.append({"nama": nama, "jumlah": jumlah, "tanggal": tanggal})
+        print("Pengeluaran berhasil ditambahkan.")
+    except ValueError:
+        print("Format tanggal tidak valid. Pengeluaran gagal ditambahkan.")
+
+# Fungsi untuk menampilkan daftar pengeluaran
+def tampilkan_pengeluaran():
+    if len(pengeluaran) == 0:
+        print("Belum ada pengeluaran yang dicatat.")
+    else:
+        print("Daftar Pengeluaran:")
+        for idx, peng in enumerate(pengeluaran):
+            print(f"{idx+1}. {peng['tanggal']}: {peng['nama']}: {peng['jumlah']}")
+
+# Fungsi untuk mencari pengeluaran berdasarkan nama
+def cari_pengeluaran():
+    keyword = input("Masukkan kata kunci untuk pencarian: ")
+    hasil_pencarian = []
+    for peng in pengeluaran:
+        if keyword.lower() in peng['nama'].lower():
+            hasil_pencarian.append(peng)
+    if len(hasil_pencarian) == 0:
+        print("Tidak ditemukan pengeluaran dengan kata kunci tersebut.")
+    else:
+        print("Hasil Pencarian:")
+        for idx, peng in enumerate(hasil_pencarian):
+            print(f"{idx+1}. {peng['tanggal']}: {peng['nama']}: {peng['jumlah']}")
+
+# Fungsi untuk menghapus pengeluaran berdasarkan indeks
+def hapus_pengeluaran():
+    if len(pengeluaran) == 0:
+        print("Belum ada pengeluaran yang dicatat.")
+    else:
+        tampilkan_pengeluaran()
+        indeks = int(input("Masukkan indeks pengeluaran yang akan dihapus: "))
+        if indeks >= 1 and indeks <= len(pengeluaran):
+            del pengeluaran[indeks-1]
+            print("Pengeluaran berhasil dihapus.")
+        else:
+            print("Indeks pengeluaran tidak valid.")
+
+# Fungsi untuk menampilkan menu utama
+def tampilkan_menu():
+    print("=========================")
+    print("Pencatat Keuangan Pribadi")
+    print("=========================")
+    print("1. Tambah Pengeluaran")
+    print("2. Tampilkan Pengeluaran")
+    print("3. Cari Pengeluaran")
+    print("4. Hapus Pengeluaran")
+    print("0. Keluar")
+    print("=========================")
+
+# Loop utama program
+while True:
+    tampilkan_menu()
+    pilihan = input("Masukkan pilihan menu: ")
+
+    if pilihan == "1":
+        tambah_pengeluaran()
+    elif pilihan == "2":
+        tampilkan_pengeluaran()
+    elif pilihan == "3":
+        cari_pengeluaran()
+    elif pilihan == "4":
+        hapus_pengeluaran()
+    elif pilihan == "0":
+        print("Terima kasih telah menggunakan Cashtrack.")
+        break
+    else:
+        print("Pilihan tidak valid. Silakan coba lagi.") 
