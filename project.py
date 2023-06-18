@@ -5,27 +5,9 @@ import time
 Cash = 0
 Bank = 0
 cuy = (1, 2)
-HackedCounter = 0
 data_keuangan = []
 pengeluaran = []
 
-
-def Hacked(HackedCounter):
-        for i in range (0,110, 10):
-            print (i, "%")
-            time.sleep(0.1)
-            
-        print("HACKED BY SILVER WOLF")
-        time.sleep(3)
-        print("Silver Wolf : Heee, salah sambung")
-        time.sleep(3)
-        print("Silver Wolf : omong omong apa apaan aplikasi ga guna ini")
-        time.sleep(3)
-        print("Silver Wolf : BYE")
-        time.sleep(2)
-        print()
-        print()
-        return HackedCounter
 
 # ========= Penarikan Start =========
 def penarikan(Bank, Cash):
@@ -67,7 +49,22 @@ def tambah_pemasukan(Cash, Bank):
     return Cash, Bank
 
 # ========= Pemasukan End =========
-
+def Hacked(HackedCounter):
+        for i in range (0,110, 10):
+            print (i, "%")
+            time.sleep(0.1)
+            
+        print("HACKED BY SILVER WOLF")
+        time.sleep(3)
+        print("Silver Wolf : Heee, salah sambung")
+        time.sleep(3)
+        print("Silver Wolf : omong omong apa apaan aplikasi ga guna ini")
+        time.sleep(3)
+        print("Silver Wolf : BYE")
+        time.sleep(2)
+        print()
+        print()
+        return HackedCounter
 # ========= Catatan keuangan Start =========
 def catatan_keuangan(tanggal, deskripsi, jenis, jumlah):
     data = {
@@ -89,7 +86,7 @@ def lihat_catatan_keuangan():
 # ========= Catatan keuangan End =========
 
 
-
+HackedCounter = 0
 # ========= Pengeluaran Start =========
 # Inisialisasi array untuk menyimpan daftar pengeluaran
 
@@ -193,6 +190,8 @@ def MenuPengeluaran():
         else:
             print("Pilihan tidak valid. Silakan coba lagi.") 
 # ========= Pengeluaran End =========
+
+
 
 # ========= Main Function Start =========
 DecisionCounter = 0
