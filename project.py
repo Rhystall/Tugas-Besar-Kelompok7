@@ -28,13 +28,15 @@ def lihat_catatan_keuangan():
 #Function Penarikan (Aubrey)
 def penarikan(Bank, Cash):
     Penarikan = int(input("Berapa yang mau di ambil: "))
-    Tanggal = input("Masukan tanggal : ")
+    Tanggal = input("Masukan tanggal (DD-MM-YYYY): ")
     Bank -= Penarikan + 5000
     if Bank < 0:
         print("Transfer gagal, dana kurang.")
         Bank += Penarikan + 5000
     else:
         print("Transfer berhasil, Anda akan dikenakan biaya 5000.")
+        catatan_keuangan(Tanggal, "Penarikan uang dar bank", "Penarikan", Penarikan + 5000)
+
     Cash += Penarikan
     return Bank, Cash
 
@@ -42,6 +44,7 @@ def penarikan(Bank, Cash):
 def tambah_pemasukan(Cash, Bank):
     MasukanUang = int(input("Masukkan jumlah pemasukan: "))
     Deskripsi = input("Masukkan deskripsi pemasukan: ")
+    Tanggal = input("Masukan tanggal (DD-MM-YYYY): ")
 
     print("1. Cash")
     print("2. Bank")
@@ -49,8 +52,10 @@ def tambah_pemasukan(Cash, Bank):
 
     if MasukanKemana == 1:
         Cash += MasukanUang
+        catatan_keuangan(Tanggal, Deskripsi, "Pemasukan Cash", MasukanUang)
     elif MasukanKemana == 2:
         Bank += MasukanUang
+        catatan_keuangan(Tanggal, Deskripsi, "Pemasukan Bank", MasukanUang)
     else:
         print("Salah memasukkan pilihan.")
 
