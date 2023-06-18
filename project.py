@@ -210,7 +210,7 @@ while DecisionCounter == 0:
     
     Ngapain = input("Masukkan Pilihan: ")
 
-    if HackedCounter == 2 :
+    if HackedCounter == 7 :
         Hacked(HackedCounter)
     if Ngapain == "0":
         print("Terima kasih telah menggunakan Cashtrack.")
