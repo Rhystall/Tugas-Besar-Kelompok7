@@ -49,22 +49,7 @@ def tambah_pemasukan(Cash, Bank):
     return Cash, Bank
 
 # ========= Pemasukan End =========
-def Hacked(HackedCounter):
-        for i in range (0,110, 10):
-            print (i, "%")
-            time.sleep(0.1)
-            
-        print("HACKED BY SILVER WOLF")
-        time.sleep(3)
-        print("Silver Wolf : Heee, salah sambung")
-        time.sleep(3)
-        print("Silver Wolf : omong omong apa apaan aplikasi ga guna ini")
-        time.sleep(3)
-        print("Silver Wolf : BYE")
-        time.sleep(2)
-        print()
-        print()
-        return HackedCounter
+
 # ========= Catatan keuangan Start =========
 def catatan_keuangan(tanggal, deskripsi, jenis, jumlah):
     data = {
@@ -86,7 +71,7 @@ def lihat_catatan_keuangan():
 # ========= Catatan keuangan End =========
 
 
-HackedCounter = 0
+
 # ========= Pengeluaran Start =========
 # Inisialisasi array untuk menyimpan daftar pengeluaran
 
@@ -210,19 +195,18 @@ while DecisionCounter == 0:
     
     Ngapain = input("Masukkan Pilihan: ")
 
-    if HackedCounter == 7 :
-        Hacked(HackedCounter)
+ 
     if Ngapain == "0":
         print("Terima kasih telah menggunakan Cashtrack.")
         sys.exit()
     elif Ngapain == "1":
-        HackedCounter +=1
+       
         Bank, Cash = penarikan(Bank, Cash)
     elif Ngapain == "2":
-        HackedCounter +=1
+      
         Cash, Bank = tambah_pemasukan (Cash, Bank)
     elif Ngapain == "3":
-        HackedCounter +=1
+        
         MenuPengeluaran()
     elif Ngapain == "4":
         lihat_catatan_keuangan()
