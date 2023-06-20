@@ -19,7 +19,7 @@ def penarikan(Bank, Cash):
         Bank += Penarikan + 5000
     else:
         print("Penarikan uang berhasil, Anda akan dikenakan biaya 5000.")
-        catatan_keuangan(Tanggal, "Penarikan uang dar bank", "Penarikan", Penarikan + 5000)
+        catatan_keuangan(Tanggal, "Penarikan uang dari bank", "Penarikan", Penarikan + 5000)
 
     Cash += Penarikan
     return Bank, Cash
@@ -113,7 +113,7 @@ def tambah_pengeluaran():
             Bank += jumlah
         else :
             print("Berhasil menambahkan pengeluaran")
-            catatan_keuangan(tanggal, "Pengeluaran uang dari bank", "Pengeluaran", jumlah )
+            catatan_keuangan(tanggal, nama, "Pengeluaran", jumlah )
     elif Pilihan == "2":
         Cash -= jumlah
         if Cash < 0 :
@@ -121,7 +121,7 @@ def tambah_pengeluaran():
             Cash += jumlah
         else :
             print("Berhasil menambahkan pengeluaran")
-            catatan_keuangan(tanggal, "Pengeluaran uang dari Cash", "Pengeluaran", jumlah )
+            catatan_keuangan(tanggal, nama, "Pengeluaran", jumlah )
 
 # Fungsi untuk menampilkan daftar pengeluaran
 def tampilkan_pengeluaran():
