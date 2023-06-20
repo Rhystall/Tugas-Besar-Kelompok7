@@ -12,7 +12,7 @@ pengeluaran = []
 # ========= Penarikan Start =========
 def penarikan(Bank, Cash):
     Penarikan = int(input("Berapa yang mau di ambil: "))
-    Tanggal = input("Masukan tanggal (DD-MM-YYYY): ")
+    Tanggal = input("Masukan tanggal (YYYY-MM-DD): ")
     Bank -= Penarikan + 5000
     if Bank < 0:
         print("Transfer gagal, dana kurang.")
@@ -31,7 +31,7 @@ def penarikan(Bank, Cash):
 def tambah_pemasukan(Cash, Bank):
     MasukanUang = int(input("Masukkan jumlah pemasukan: "))
     Deskripsi = input("Masukkan deskripsi pemasukan: ")
-    Tanggal = input("Masukan tanggal (DD-MM-YYYY): ")
+    Tanggal = input("Masukan tanggal (YYYY-MM-DD): ")
 
     print("1. Cash")
     print("2. Bank")
