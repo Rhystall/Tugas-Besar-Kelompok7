@@ -208,6 +208,7 @@ def MenuPengeluaran():
 HackedCounter = 0
 
 # ========= Main Function Start =========
+
 DecisionCounter = 0
 
 while DecisionCounter == 0:
@@ -222,6 +223,7 @@ while DecisionCounter == 0:
     print("3. Pemasukan")
     print("4. Pengeluaran")
     print("5. Lihat Catatan Keuangan")
+    print("===========================")
     
     Ngapain = input("Masukkan Pilihan: ")
     if HackedCounter == 5 :
