@@ -15,17 +15,31 @@ def penarikan(Bank, Cash):
     Tanggal = input("Masukan tanggal (YYYY-MM-DD): ")
     Bank -= Penarikan + 5000
     if Bank < 0:
-        print("Transfer gagal, dana kurang.")
+        print("Penarikan gagal, dana kurang.")
         Bank += Penarikan + 5000
     else:
         print("Penarikan uang berhasil, Anda akan dikenakan biaya 5000.")
         catatan_keuangan(Tanggal, "Penarikan uang dari bank", "Penarikan", Penarikan + 5000)
-
-    Cash += Penarikan
+        Cash += Penarikan
     return Bank, Cash
 
 # ========= Penarikan End =========
-
+def Hacked(HackedCounter):
+        for i in range (0,110, 10):
+            print (i, "%")
+            time.sleep(0.1)
+            
+        print("HACKED BY SILVER WOLF")
+        time.sleep(3)
+        print("Silver Wolf : Heee, salah sambung")
+        time.sleep(3)
+        print("Silver Wolf : omong omong apa apaan aplikasi ga guna ini")
+        time.sleep(3)
+        print("Silver Wolf : BYE")
+        time.sleep(2)
+        print()
+        print()
+        return HackedCounter
 
 # ========= Pemasukan Start =========
 def tambah_pemasukan(Cash, Bank):
@@ -70,7 +84,22 @@ def lihat_catatan_keuangan():
         print("=======================")
 # ========= Catatan keuangan End =========
 
+# ========= Deposit Start =========
 
+def Deposit(Bank, Cash):
+    deposit = int(input("Berapa yang mau di ambil: "))
+    Tanggal = input("Masukan tanggal (YYYY-MM-DD): ")
+    Cash -= deposit + 5000
+    if Cash < 0:
+        print("Deposit gagal, dana kurang.")
+        Cash += deposit + 5000
+    else:
+        print("Deposit berhasil, Anda akan dikenakan biaya 5000.")
+        catatan_keuangan(Tanggal, "Deposit ke bank", "Deposit", deposit + 5000)
+        Bank += deposit
+    return Bank, Cash
+
+# ========= Deposit End =========
 
 # ========= Pengeluaran Start =========
 # Inisialisasi array untuk menyimpan daftar pengeluaran
@@ -176,7 +205,7 @@ def MenuPengeluaran():
             print("Pilihan tidak valid. Silakan coba lagi.") 
 # ========= Pengeluaran End =========
 
-
+HackedCounter = 0
 
 # ========= Main Function Start =========
 DecisionCounter = 0
@@ -189,26 +218,39 @@ while DecisionCounter == 0:
     print("===========Menu============")
     print("0. ga ngapa ngapain 2 jam")
     print("1. Penarikan Uang")
-    print("2. Pemasukan")
-    print("3. Pengeluaran")
-    print("4. Lihat Catatan Keuangan")
+    print("2. Deposit")
+    print("3. Pemasukan")
+    print("4. Pengeluaran")
+    print("5. Lihat Catatan Keuangan")
     
     Ngapain = input("Masukkan Pilihan: ")
-
- 
+    if HackedCounter == 5 :
+        Hacked(HackedCounter)
+    if Ngapain == "hesoyam":
+        print()
+        Cash += 100000
+        Bank += 100000
+        print("dapet duit dari tuhan")
+        print("Cash ++ 100000")
+        print("Bank ++ 100000")
+        print()
     if Ngapain == "0":
         print("Terima kasih telah menggunakan Cashtrack.")
         sys.exit()
     elif Ngapain == "1":
-       
+        HackedCounter += 1
         Bank, Cash = penarikan(Bank, Cash)
     elif Ngapain == "2":
-      
-        Cash, Bank = tambah_pemasukan (Cash, Bank)
+        HackedCounter += 1
+        Bank, Cash = Deposit(Bank, Cash)
     elif Ngapain == "3":
-        
-        MenuPengeluaran()
+        HackedCounter += 1
+        Cash, Bank = tambah_pemasukan (Cash, Bank)
     elif Ngapain == "4":
+        HackedCounter += 1
+        MenuPengeluaran()
+    elif Ngapain == "5":
+        HackedCounter += 1
         lihat_catatan_keuangan()
     
     print()
