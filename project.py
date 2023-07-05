@@ -217,7 +217,7 @@ while DecisionCounter == 0:
     print()
     print("========Cash Track=========")
     print("===========Menu============")
-    print("0. ga ngapa ngapain 2 jam")
+    print("0. Keluar")
     print("1. Penarikan Uang")
     print("2. Deposit")
     print("3. Pemasukan")
